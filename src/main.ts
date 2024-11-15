@@ -1,11 +1,11 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import setupPlugins from "@/plugins";
+import setupPlugins from "@/plugins"; //注册组件插件
 
 // 本地SVG图标
 import "virtual:svg-icons-register";
 
-// 样式
+// 引入全局样式
 import "element-plus/theme-chalk/dark/css-vars.css";
 import "@/styles/index.scss";
 import "uno.css";

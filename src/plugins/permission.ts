@@ -3,12 +3,13 @@ import type {
   RouteLocationNormalized,
   RouteRecordRaw,
 } from "vue-router";
-import NProgress from "@/utils/nprogress";
+import NProgress from "@/utils/nprogress"; // 进度条
 import { getToken } from "@/utils/auth";
 import router from "@/router";
 import { usePermissionStore, useUserStore } from "@/store";
 
 export function setupPermission() {
+  console.log('全局路由守卫setupPermission')
   // 白名单路由
   const whiteList = ["/login"];
 

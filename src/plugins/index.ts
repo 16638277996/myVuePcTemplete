@@ -10,6 +10,7 @@ import webSocketManager from "@/utils/websocket";
 import { InstallCodeMirror } from "codemirror-editor-vue3";
 
 export default {
+  // install 方法通常是在创建 Vue 应用实例时被调用，用于初始化整个应用程序所需的各种设置和插件
   install(app: App<Element>) {
     // 自定义指令(directive)
     setupDirective(app);

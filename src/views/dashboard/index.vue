@@ -197,7 +197,7 @@ import VisitTrend from "./components/VisitTrend.vue";
 import WebSocketManager from "@/utils/websocket";
 import router from "@/router";
 
-import { useUserStore } from "@/store/modules/user";
+import { useUserStore } from "@/store";
 import StatsAPI, { VisitStatsVO } from "@/api/system/log";
 import NoticeAPI, { NoticePageVO } from "@/api/system/notice";
 

@@ -4,6 +4,7 @@ import defaultSettings from "@/settings";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import en from "element-plus/es/locale/lang/en";
 import { store } from "@/store";
+
 import { DeviceEnum } from "@/enums/DeviceEnum";
 import { SidebarStatusEnum } from "@/enums/SidebarStatusEnum";
 
