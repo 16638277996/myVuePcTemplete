@@ -27,6 +27,9 @@ const settingsStore = useSettingsStore();
 
 const locale = computed(() => appStore.locale); //设置语言
 const size = computed(() => appStore.size as SizeEnum);  //设置大小： 默认 大 小
+
+console.log('settingsStore.watermarkEnabled')
+console.log(settingsStore.watermarkEnabled)
 const watermarkEnabled = computed(() => settingsStore.watermarkEnabled); //是否显示水印
 
 console.log('1212')

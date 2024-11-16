@@ -17,6 +17,10 @@ export function setupPermission() {
     NProgress.start();
 
     const isLogin = !!getToken(); // 判断是否登录
+
+    console.log('跳转path')
+    console.log(to.path)
+
     if (isLogin) {
       if (to.path === "/login") {
         // 已登录，访问登录页，跳转到首页
@@ -28,7 +32,7 @@ export function setupPermission() {
           if (to.matched.length === 0) {
             // 路由未匹配，跳转到404
             next("/404");
-          } else {
+          } else {   
             // 动态设置页面标题
             const title =
               (to.params.title as string) || (to.query.title as string);
@@ -41,6 +45,8 @@ export function setupPermission() {
           try {
             // 生成动态路由
             const dynamicRoutes = await permissionStore.generateRoutes();
+            console.log('动态路由')
+            console.log(dynamicRoutes)
             dynamicRoutes.forEach((route: RouteRecordRaw) =>
               router.addRoute(route)
             );
@@ -77,10 +83,10 @@ function redirectToLogin(
   to: RouteLocationNormalized,
   next: NavigationGuardNext
 ) {
-  const params = new URLSearchParams(to.query as Record<string, string>);
-  const queryString = params.toString();
-  const redirect = queryString ? `${to.path}?${queryString}` : to.path;
-  next(`/login?redirect=${encodeURIComponent(redirect)}`);
+  const params = new URLSearchParams(to.query as Record<string, string>); // 先获取参数
+  const queryString = params.toString(); // 将参数转为string类型
+  const redirect = queryString ? `${to.path}?${queryString}` : to.path; //  拼接登录之后的重定向路由   path+参数
+  next(`/login?redirect=${encodeURIComponent(redirect)}`); //重定向到login界面   login登录之后重定向到刚才没有访问的界面 并且把参数安全加密
 }
 
 /** 判断是否有权限 */
