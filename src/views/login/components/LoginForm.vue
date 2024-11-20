@@ -1,17 +1,8 @@
 <template>
     <div class="login-form">
+        <h2>欢迎登录</h2>
+
         <el-form ref="loginFormRef" :model="loginData" :rules="loginRules">
-            <div class="form-title">
-              <h2>{{ defaultSettings.title }}</h2>
-              <el-dropdown style="position: absolute; right: 0">
-                <div class="cursor-pointer">
-                  <el-icon>
-                    <arrow-down />
-                  </el-icon>
-                </div>
-              </el-dropdown>
-            </div>
-  
             <!-- 用户名 -->
             <el-form-item prop="username">
               <div class="input-wrapper">
@@ -55,29 +46,10 @@
               </el-form-item>
             </el-tooltip>
   
-            <!-- 验证码 -->
-            <el-form-item prop="captchaCode">
-              <div class="input-wrapper">
-                <svg-icon icon-class="captcha" class="mx-2" />
-                <el-input
-                  v-model="loginData.captchaCode"
-                  auto-complete="off"
-                  size="large"
-                  class="flex-1"
-                  :placeholder="$t('login.captchaCode')"
-                  @keyup.enter="handleLoginSubmit"
-                />
-              </div>
-            </el-form-item>
-  
             <div class="flex-x-between w-full py-1">
               <el-checkbox>
                 {{ $t("login.rememberMe") }}
               </el-checkbox>
-  
-              <el-link type="primary" href="/forget-password">
-                {{ $t("login.forgetPassword") }}
-              </el-link>
             </div>
   
             <!-- 登录按钮 -->
@@ -90,17 +62,6 @@
             >
               {{ $t("login.login") }}
             </el-button>
-  
-            <!-- 第三方登录 -->
-            <el-divider>
-              <el-text size="small">{{ $t("login.otherLoginMethods") }}</el-text>
-            </el-divider>
-            <div class="third-party-login">
-              <svg-icon icon-class="wechat" class="icon" />
-              <svg-icon icon-class="qq" class="icon" />
-              <svg-icon icon-class="github" class="icon" />
-              <svg-icon icon-class="gitee" class="icon" />
-            </div>
         </el-form>
     </div>
 </template>
@@ -256,7 +217,18 @@
   });
   </script>
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
+.login-form{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 50px 25px  0 25px;
+  h2{
+    font-weight: 400;
+  }
+}
+
+
   // .login {
   //   display: flex;
   //   align-items: center;
@@ -412,5 +384,5 @@
   //     }
   //   }
   // }
-  </style>
+</style>
   

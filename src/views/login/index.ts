@@ -1,7 +1,8 @@
 
 interface Product {
-    productName: string; // 产品名称
-    svgName: string;     // SVG 名称
+    productName: string;// 产品名称
+    svgName: string;// SVG 名称
+    bgColor:string //背景色
 }
 
 // 定义一个包含多个产品的数组类型
@@ -11,27 +12,33 @@ type ProductList = Product[];
 export const ProductsList: ProductList = [
     {
         productName: '粉剂',
-        svgName: 'fj.svg'
+        svgName: 'login_fj',
+        bgColor:'#F2AB62'
     },
     {
         productName: '饵剂',
-        svgName: 'ej'
+        svgName: 'login_ej',
+        bgColor:'#147AFF'
     },
     {
         productName: '采集器',
-        svgName: 'jcq'
+        svgName: 'login_jcq',
+        bgColor:'#FB6669'
     },
     {
         productName: '婚飞器',
-        svgName: 'hfq'
+        svgName: 'login_hfq',
+        bgColor:'#FF9000'
     },
     {
         productName: '喷粉机',
-        svgName: 'smq'
+        svgName: 'login_smq',
+        bgColor:'#6F48FC'
     },
     {
         productName: '撒播器',
-        svgName: 'sbq'
+        svgName: 'login_sbq',
+        bgColor:'#22DE5D'
     }
 ];
 

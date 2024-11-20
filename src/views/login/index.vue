@@ -5,11 +5,9 @@
                 <li class="login_wrap_content_img"></li>
 
                 <li class="login_wrap_content_list"> 
-                    <div>
-                        <p v-for="(item,index) in ProductsList" :key="index">
-                            <SvgIcon :icon-class="item.svgName" width="56px" height="76"/>
-                            <p>{{ item.productName }}</p>
-                        </p>
+                    <div v-for="(item,index) in ProductsList" :key="index" class="login_wrap_content_list_item" :style="{background:item.bgColor}" >
+                        <SvgIcon :icon-class="item.svgName" class="icon_class" width="56px" height="76"/>
+                        <p>{{ item.productName }}</p>
                     </div>
                 </li>
 
@@ -49,7 +47,6 @@ import { ProductsList,footerDetails } from "../login/index";
         background-size:100% 100%;
         background-repeat:no-repeat;
         height: 92%;
-        min-height:560px;
         ul{
             @include flexLayout;
             li{
@@ -61,11 +58,35 @@ import { ProductsList,footerDetails } from "../login/index";
            @include bgSet(url("@/assets/images/login_left_bg.png"));
         }
         &_list{
-           margin: 0 15px;
-           width: 366px;
+            margin: 0 15px;
+            width: 366px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content:space-between;
+            &_item{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 176px;
+                height: 165px;
+                .icon_class{
+                   margin: 0 auto;
+                }
+                p{  
+                    font-size: 14px;
+                    width: 100%;
+                    height: 60px;
+                    color: #fff;
+                    @include flexLayout
+                }
+            }
         }
         &_login{
            width: 330px;
+           background: #fff;
+           border-radius: 6px;
         }
     }
    
