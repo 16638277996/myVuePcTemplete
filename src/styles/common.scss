@@ -1,0 +1,60 @@
+// 混入使用案例
+// @mixin bordered($color: blue, $width: 1px) {
+//     border: $width solid $color;
+//   }
+//   p { @include bordered(blue,2px); }
+
+
+// flex布局 默认居中
+@mixin flexLayout($center1: center, $center2: center) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: $center1; // flex-start | flex-end | center | space-between | space-around
+    align-items: $center2; // flex-start | flex-end | center | baseline | stretch
+}
+
+// 背景图
+@mixin bgSet($url) {
+    background:$url;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+
+// position居中
+@mixin positionCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+// 文本最多(n)行，超出部分用...表示
+@mixin line($num) {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+  }
+  
+
+// 文本超出隐藏 ...隐藏文本
+@mixin sinleline-ellipsis($width: 100%) {
+    width: $width;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+

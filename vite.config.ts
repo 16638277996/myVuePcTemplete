@@ -46,10 +46,6 @@ export default defineConfig(({ mode }:ConfigEnv):UserConfig => {
   // `VITE_` 前缀。   mode是env文件  process.cwd()获取当前目录的文件
   const env = loadEnv(mode, process.cwd(), '')
 
-
-
-
-
   return {
     resolve: {
       alias: {
@@ -66,6 +62,7 @@ export default defineConfig(({ mode }:ConfigEnv):UserConfig => {
               api: "modern-compiler",
               additionalData: `
                 @use "@/styles/variables.scss" as *;
+                @use "@/styles/common.scss" as *;
               `,
             },
         }
@@ -127,14 +124,10 @@ export default defineConfig(({ mode }:ConfigEnv):UserConfig => {
         dts: resolve(pathSrc, "types", "components.d.ts"), // 指定自动导入函数TS类型声明文件路径
       }),
 
-      
-
-
       createSvgIconsPlugin({
-        // 指定需要缓存的图标文件夹
-        iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
-        // 指定symbolId格式   唯一名称
-        symbolId: 'icon-[dir]-[name]',
+          // 缓存图标位置
+          iconDirs: [resolve(pathSrc, "assets/icons")],
+          symbolId: "icon-[dir]-[name]",
       }),
 
       Icons({
