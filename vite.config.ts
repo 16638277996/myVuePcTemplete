@@ -1,5 +1,6 @@
 import vue from "@vitejs/plugin-vue";
 import { type UserConfig, type ConfigEnv, loadEnv, defineConfig } from "vite";
+import px2rem from "postcss-px2rem"
 
 
 // 配置自动导出插件unplugin   自动导出插件要和elemenntplus一起用
@@ -54,6 +55,13 @@ export default defineConfig(({ mode }:ConfigEnv):UserConfig => {
     },
 
     css: {
+        postcss: {
+          plugins: [
+            px2rem({
+              remUnit:192
+            })
+          ]
+        },
         // CSS 预处理器
         preprocessorOptions: {
         //define global scss variable

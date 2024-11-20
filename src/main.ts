@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import setupPlugins from "@/plugins"; //注册组件插件
+import "lib-flexible-computer"; //适配
 
 // 本地SVG图标
 import "virtual:svg-icons-register";
