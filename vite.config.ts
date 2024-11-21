@@ -55,13 +55,6 @@ export default defineConfig(({ mode }:ConfigEnv):UserConfig => {
     },
 
     css: {
-        postcss: {
-          plugins: [
-            px2rem({
-              remUnit:192
-            })
-          ]
-        },
         // CSS 预处理器
         preprocessorOptions: {
         //define global scss variable
