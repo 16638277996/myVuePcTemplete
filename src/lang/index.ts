@@ -8,24 +8,24 @@ import zhCnLocale from "./package/zh-cn";
 const appStore = useAppStoreHook();
 
 const messages = {
-  "zh-cn": {
-    ...zhCnLocale,
-  },
-  en: {
-    ...enLocale,
-  },
+    "zh-cn": {
+        ...zhCnLocale,
+    },
+    en: {
+        ...enLocale,
+    },
 };
 
 const i18n = createI18n({
-  legacy: false,
-  locale: appStore.language,
-  messages: messages,
-  globalInjection: true,
+    legacy: false,
+    locale: appStore.language,
+    messages: messages,
+    globalInjection: true,
 });
 
 // 全局注册 i18n
 export function setupI18n(app: App<Element>) {
-  app.use(i18n);
+    app.use(i18n);
 }
 
 export default i18n;
