@@ -12,11 +12,6 @@ import "@/styles/index.scss";
 import "uno.css";
 import "animate.css";
 
-const pxToRem = (pxNumber:number | string) :string=>{
-    return pxNumber as number / 192 + 'rem'
-}
-
-App.prototype.$pxToRem = pxToRem
 
 const app = createApp(App);
 // 注册插件

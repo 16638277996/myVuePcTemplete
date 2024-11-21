@@ -36,11 +36,9 @@ import { ProductsList,footerDetails } from "../login/index";
     height: 37px;
 }
 .login_wrap{
-    width: 100%;
-    height: 100%;
+    flex: 1;
     background: #fff;
     position: relative;
- 
     &_content{
         @include flexLayout;
         @include bgSet(url("@/assets/images/login_bg.png"));
@@ -48,7 +46,7 @@ import { ProductsList,footerDetails } from "../login/index";
         background-repeat:no-repeat;
         height: 92%;
         ul{
-            @include flexLayout;
+            display: flex;
             li{
                height: 528px;
             }
@@ -99,7 +97,7 @@ import { ProductsList,footerDetails } from "../login/index";
     footer{
         @extend .common_sty;
         @include flexLayout;
-        overflow: scroll;
+        // overflow: scroll;
         word-break: break-all;
         &::-webkit-scrollbar {
             display: none;

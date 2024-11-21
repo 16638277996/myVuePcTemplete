@@ -9,14 +9,13 @@
                 <el-icon class="mx-2">
                   <User />
                 </el-icon>
-                <el-input
+                <el-input   
                   ref="username"
                   v-model="loginData.username"
                   :placeholder="$t('login.username')"
                   name="username"
                   size="large"
-                  class="h-[48px]"
-                />
+                  class="h-[48px]"></el-input>
               </div>
             </el-form-item>
   
@@ -224,165 +223,37 @@
   height: 100%;
   padding: 50px 25px  0 25px;
   h2{
-    font-weight: 400;
+    font-weight: 400;margin-bottom: 16px;
+  }
+  .input-wrapper{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  :deep(.el-form-item) {
+      background: var(--el-input-bg-color);
+      border: 1px solid var(--el-border-color);
+      border-radius: 5px;
+  }
+  :deep(.el-input) {
+  .el-input__wrapper {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    &.is-focus,
+    &:hover {
+      box-shadow: none !important;
+    }
+
+    input:-webkit-autofill {
+      /* 通过延时渲染背景色变相去除背景颜色 */
+      transition: background-color 1000s ease-in-out 0s;
+    }
   }
 }
-
-
-  // .login {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   width: 100%;
-  //   height: 100%;
-  //   overflow-y: auto;
-  //   background: url("@/assets/images/login-background-light.jpg") no-repeat center
-  //     right;
   
-  //   .login-header {
-  //     position: absolute;
-  //     top: 0;
-  //     display: flex;
-  //     justify-content: right;
-  //     width: 100%;
-  //     padding: 15px;
-  
-  //     .logo {
-  //       width: 26px;
-  //       height: 26px;
-  //     }
-  
-  //     .title {
-  //       margin: auto 5px;
-  //       font-size: 24px;
-  //       font-weight: bold;
-  //       color: #3b82f6;
-  //     }
-  //   }
-  
-  //   .login-content {
-  //     display: flex;
-  //     width: 960px;
-  //     overflow: hidden;
-  //     background-color: #fff;
-  //     border-radius: 5px;
-  //     box-shadow: var(--el-box-shadow-light);
-  
-  //     @media (width <= 768px) {
-  //       flex-direction: column;
-  //       max-width: 100%;
-  //       height: 100vh;
-  //       padding: 0 30px;
-  //       border-radius: 0;
-  //       box-shadow: none;
-  //     }
-  
-  //     .login-img {
-  //       display: flex;
-  //       flex: 3;
-  //       align-items: center;
-  //       justify-content: center;
-  //       background: linear-gradient(60deg, #165dff, #6aa1ff);
-  
-  //       @media (width <= 768px) {
-  //         display: none;
-  //       }
-  //     }
-  
-  //     .login-form {
-  //       display: flex;
-  //       flex: 2;
-  //       flex-direction: column;
-  //       justify-content: center;
-  //       min-width: 400px;
-  //       padding: 30px;
-  
-  //       @media (width <= 768px) {
-  //         width: 100%;
-  //         padding: 0 20px;
-  //       }
-  
-  //       .form-title {
-  //         position: relative;
-  //         display: flex;
-  //         align-items: center;
-  //         justify-content: center;
-  //         padding: 0 0 20px;
-  //         text-align: center;
-  //       }
-  
-  //       .input-wrapper {
-  //         display: flex;
-  //         align-items: center;
-  //         width: 100%;
-  //       }
-  
-  //       .captcha-img {
-  //         height: 48px;
-  //         cursor: pointer;
-  //         border-top-right-radius: 6px;
-  //         border-bottom-right-radius: 6px;
-  //       }
-  
-  //       .third-party-login {
-  //         display: flex;
-  //         justify-content: center;
-  //         width: 100%;
-  //         color: var(--el-text-color-secondary);
-  
-  //         *:not(:first-child) {
-  //           margin-left: 20px;
-  //         }
-  
-  //         .icon {
-  //           cursor: pointer;
-  //         }
-  //       }
-  //     }
-  //   }
-  
-  //   .login-footer {
-  //     position: absolute;
-  //     bottom: 0;
-  //     width: 100%;
-  //     text-align: center;
-  //   }
-  // }
-  
-  // :deep(.el-form-item) {
-  //   background: var(--el-input-bg-color);
-  //   border: 1px solid var(--el-border-color);
-  //   border-radius: 5px;
-  // }
-  
-  // :deep(.el-input) {
-  //   .el-input__wrapper {
-  //     padding: 0;
-  //     background-color: transparent;
-  //     box-shadow: none;
-  
-  //     &.is-focus,
-  //     &:hover {
-  //       box-shadow: none !important;
-  //     }
-  
-  //     input:-webkit-autofill {
-  //       /* 通过延时渲染背景色变相去除背景颜色 */
-  //       transition: background-color 1000s ease-in-out 0s;
-  //     }
-  //   }
-  // }
-  
-  // html.dark {
-  //   .login {
-  //     background: url("@/assets/images/login-background-dark.jpg") no-repeat
-  //       center right;
-  
-  //     .login-content {
-  //       background: transparent;
-  //       box-shadow: var(--el-box-shadow);
-  //     }
-  //   }
-  // }
+}
 </style>
   
